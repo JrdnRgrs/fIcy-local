@@ -3,9 +3,7 @@ FROM ubuntu
 #FROM ubuntu-build
 # Install make
 RUN apt update && apt install -y make build-essential wget
-WORKDIR /tmp/
-RUN wget "https://www.thregr.org/~wavexx/software/fIcy/releases/fIcy-1.0.21.tar.gz" && tar -xvzf fIcy-1.0.21.tar.gz && mv fIcy-1.0.21 fIcy
-COPY ./fIcy/ /fIcy/
+RUN wget "https://www.thregr.org/~wavexx/software/fIcy/releases/fIcy-1.0.21.tar.gz" && tar -xvzf fIcy-1.0.21.tar.gz && mv fIcy-1.0.21/ /fIcy/
 COPY ./keep_running.sh /fIcy/keep_running.sh
 RUN chmod u+x /fIcy/keep_running.sh
 
